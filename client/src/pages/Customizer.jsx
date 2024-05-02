@@ -29,43 +29,43 @@ const Customizer = () => {
                 return <ColorPicker/>
             case "filepicker":
                 return <FilePicker file={file} setFile={setFile} readFile={readFile}/>
-            case "aipicker":
-                return <AIPicker
-                        prompt={prompt}
-                        setPrompt = {setPrompt}
-                        generatingImg = {generatingImg}
-                        handleSubmit = {handleSubmit}/>
+            // case "aipicker":
+            //     return <AIPicker
+            //             prompt={prompt}
+            //             setPrompt = {setPrompt}
+            //             generatingImg = {generatingImg}
+            //             handleSubmit = {handleSubmit}/>
             default:
                 return null;
         }
     }
 
-    const handleSubmit =  async (type)=>{
-        if (!prompt) return alert("Please enter a prompt");
-        try {
-            // Call the backend to generate an AI image
-            setGeneratingImg(true);
+    // const handleSubmit =  async (type)=>{
+    //     if (!prompt) return alert("Please enter a prompt");
+    //     try {
+    //         // Call the backend to generate an AI image
+    //         setGeneratingImg(true);
             
-            const res = await fetch("https://3-d-shirt-customizer-hftp.vercel.app//api/v1/dalle", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    prompt,
-                })
-            });
+    //         const res = await fetch("https://3-d-shirt-customizer-hftp.vercel.app//api/v1/dalle", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json"
+    //             },
+    //             body: JSON.stringify({
+    //                 prompt,
+    //             })
+    //         });
     
-            const data = await res.json();
-            console.log(data);
-            alert("Ai is generated but I don't have  money to generate it")
-        } catch (error) {
-            alert(error);
-        } finally {
-            setGeneratingImg(false);
-            setActiveEditorTab("");
-        }
-    }
+    //         const data = await res.json();
+    //         console.log(data);
+    //         alert("Ai is generated but I don't have  money to generate it")
+    //     } catch (error) {
+    //         alert(error);
+    //     } finally {
+    //         setGeneratingImg(false);
+    //         setActiveEditorTab("");
+    //     }
+    // }
 
     const handleDecals = (type,result) =>{
         const decalType = DecalTypes[type];
