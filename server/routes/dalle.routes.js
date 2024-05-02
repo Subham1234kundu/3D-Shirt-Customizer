@@ -7,7 +7,7 @@ dotenv.config();
 const router = express.Router();
 
 
-const openai = new OpenAI({ apiKey: process.sk-proj-kUkulqO4ElOtCDmJ0ZzyT3BlbkFJ272MSfq6HNLFzXAO3Y7y });
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 router.route('/').get((req, res) => {
   res.status(200).json({ message: "Hello from DALL.E ROUTES" })
