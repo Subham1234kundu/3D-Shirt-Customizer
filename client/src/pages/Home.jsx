@@ -5,13 +5,13 @@ import CustomButton from '../components/CustomButton.jsx';
 
 
 import {
-    headContentAnimation,
+    
     headContainerAnimation ,
     slideAnimation,
     headTextAnimation
 } from "../config/motion.js"
 
-import React from 'react'
+
 
 const Home = () => {
     const snap = useSnapshot(state)
